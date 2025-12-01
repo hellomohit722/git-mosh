@@ -1,5 +1,9 @@
 # 03- What is Git
 
+## What is Version Control System
+
+VCS records the change made to our code code over a time in a specified database called repository.
+
 ## What is Git
 
 Git is the most popular **Version Control System (VCS)** in the world.
