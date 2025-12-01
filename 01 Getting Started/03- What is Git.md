@@ -1,16 +1,9 @@
-# 03- What is Git
+# 03- What is Git & VCS
 
 ## What is Version Control System
 
 VCS records the change made to our code code over a time in a specified database called repository.
 
-## What is Git
-
-Git is the most popular **Version Control System (VCS)** in the world.
-
-Git records the changed made to our code in a special database called repository. It enable us to look into our project history, and see what changes where made, by whom, when and why. And if we mess something it we can easily revert our project back to an earlier state.
-
-![Git Repository](./images/03-01.png "Git Repository")
 
 ## Version Control Systems categories
 
@@ -36,6 +29,14 @@ Examples:
 - Mercurial
 
 ![Distributed VCS](./images/03-03.png "Distributed VCS")
+
+## What is Git
+
+Git is the most popular **Version Control System (VCS)** in the world.
+
+Git records the changed made to our code in a special database called repository. It enable us to look into our project history, and see what changes where made, by whom, when and why. And if we mess something it we can easily revert our project back to an earlier state.
+
+![Git Repository](./images/03-01.png "Git Repository")
 
 ## Why Git?
 
