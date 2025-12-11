@@ -1,6 +1,8 @@
 # 14- Finding the Author of Line Using Blame
 
-Git Blame is a command to find the author of a crappy line of code. Run `git blame <file>`
+The `git blame` command does exactly what its name suggests: it determines who is responsible for introducing every single line of code in a file, and when they did it.
+
+The primary use case is debugging—when you encounter a buggy or confusing line, git blame quickly points you to the relevant commit and the person who wrote it, allowing you to ask them for context or understand the history behind that specific line.
 
 ```zsh
 git blame "03 Browsing History (44m)/13- Restoring a Deleting File.md"

@@ -19,6 +19,7 @@ git checkout 33bceb5 -- "03 Browsing History (44m)/10- Finding Bugs Using Bisect
 ```
 
 After running this command we can see that we have in the **Staging Area** one new file with `git status`.
+Git copies that file content into your Working Directory (your file system). The file reappears!
 
 ```zsh
 ❯ git status

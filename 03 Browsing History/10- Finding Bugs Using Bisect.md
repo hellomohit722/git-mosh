@@ -1,8 +1,10 @@
 # 10- Finding Bugs Using Bisect
 
-Git provides a great tool to find bugs quickly **Bisect**.
+Git provides a great tool to find bugs quickly by **Bisect**.
 
-Image that we have a bug in an application, but we do not know where the bug was introduced. Using the **Bisect** to we can narrow our search.
+Image that we have a bug in an application, but we do not know where the bug was introduced. Using the **Bisect** we can narrow our search.
+
+It illustrates the binary search algorithm applied to your commit history to find the precise commit that introduced a bug.
 
 First we have to tell it that the current state, being the last commit, is a bad commit. And them we have to give it a good commit, as teh good state.
 
@@ -22,11 +24,19 @@ bf77b4e lesson completed
 [...]
 ```
 
-So first we run `git bisect start`, this will initialize the the **`bisect`** operation.
+## The Iterative Testing Loop
+Once the range is set, Git begins the process:
 
-Then we tell it the bad commit, witch is the current one, run `git bisect bad`.
+`Checkout to Midpoint:` Git automatically performs a git checkout to the commit halfway between the "good" and "bad" commits. Your Working Directory is restored to that exact point in history. This puts you into a Detached HEAD state, managed internally by Git's bisect pointers.
 
-Then we give it a good commit run `git bisect good 9f61863`. This will give the following output:
+`Test the Application: ` You run your tests or manually check the application to see if the bug is present at this midpoint commit.
+
+## Report the Result:
+
+If the bug is present, you tell Git: `git bisect bad` The upper half of the commits is now the new search range.
+
+If the bug is gone, you tell Git: `git bisect good 9f61863` The lower half of the commits is now the new search range##
+
 
 ```zsh
 ❯ git bisect good 9f61863
@@ -126,7 +136,8 @@ Date:   Sun Mar 7 15:37:14 2021 -0300
  03 Browsing History (44m)/09- Checking Out a Commit.md | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 ```
+The process continues until only one commit remains untagged as good or bad. Git automatically identifies this commit as the first bad commit:
 
 After we are done we have to attach the `HEAD` pointer to the branch with the command `git bisect reset`.
 
-With `git bisect` we can split our history in half, to see various commit, and find the commit that introduced a problem.
+This command cleans up the temporary internal pointers (refs/bisect/bad, refs/bisect/good-*) and re-attaches your HEAD pointer to the branch you started on (main in your case).

@@ -1,6 +1,6 @@
 # 03- Viewing the History
 
-We are going to view in more detail the `git log` command. Wit this command, as we know we can see in more detail the commit history. It gives us teh following output.
+We are going to view in more detail the `git log` command. With this command, as we know we can see in more detail the commit history. It gives us the following output.
 
 ```zsh
 commit b9e25dff4873a1db8cd615784a485d4ab7854e14 (HEAD -> main, origin/main)

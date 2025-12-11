@@ -1,6 +1,6 @@
 # 04- Filtering the History
 
-In a project with a long history we can have hundreds or even thousands of commits. We use we can filter commits, so we do not have to view the al history.
+In a project with a long history we can have hundreds or even thousands of commits. We use, we can filter commits, so we do not have to view the all history.
 
 ## Filter by last n commits `-number`
 

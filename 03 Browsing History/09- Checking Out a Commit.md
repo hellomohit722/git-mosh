@@ -1,6 +1,14 @@
 # 09- Checking Out a Commit
 
-When we need to see the complete project in a given point in time we can check out a given commit, and it will restore our **Working Directory** to that point in time. Using the command `git checkout <commit>`. For example `git checkout 12156df`.
+Historically used for switching branches/commits and restoring files.
+
+## 🧭 Understanding Git Pointers:
+ HEAD and BranchesAt its core, Git history is managed by special pointers.
+ 1. The Branch Pointer (main/master)A branch name (like main) is simply a pointer that always points to the latest commit in that sequence.When you create a new commit, Git creates the new commit object, and then the branch pointer (main) automatically moves forward to point to this new commit.
+ 2. The HEAD Pointer (Your Current Location)HEAD is Git's crucial pointer that tells it where you currently are in the repository.Normally, HEAD points to a branch name (e.g., HEAD $\rightarrow$ main). This means any new commits you create will automatically move both HEAD and the branch (main) forward.
+
+
+When we need to see the complete project in a given point in time we can checkout a given commit, and it will restore our **Working Directory** to that point in time. Using the command `git checkout <commit>`. For example `git checkout 12156df`.
 
 This will bring a warning:
 
@@ -31,7 +39,7 @@ In Git each commit is pointing to the last commit. That is how Git maintains his
 
 ![Commit history](./images/09-01.png "Commit history")
 
-Until now all the commits created are part of a branch, the `master` or `main`. The way Git represents branches is using a pointer, so `master` is pointing to the last commit created. As we create new commits master moves forward to point to the last commit.
+Until all the commits created are part of a branch, the `master` or `main`. The way Git represents branches is using a pointer, so `master` is pointing to the last commit created. As we create new commits master moves forward to point to the last commit.
 
 ![Master branch](./images/09-02.png "Master branch")
 
@@ -56,7 +64,17 @@ Lost commit.
 
 ![lost commit](./images/09-05.png "detached HEAD state")
 
-If we run `git log --oneline --all` command while in a detached `HEAD` state we can see the `master`(main in my case) pointing to the last commit and `HEAD` point to the specific commit. If we use `git log --oneline` without the the `--all` flag, we will not see the commits after made after the commit `HEAD` is pointing to.
+When you run git log --oneline without any extra flags, Git uses HEAD as the starting point for history traversal.
+
+Behavior in Detached HEAD: When HEAD is pointing directly to an older commit (e.g., f2150f7), Git starts its log from there and works backward through the parent commits (4acfee7, dd6b4b2, etc.).
+
+Result: It only shows commits reachable from HEAD. Since f2150f7 is an older commit, the newer commits that the main branch points to (ebbd4b1, 66cf5ab, 2ee3bb6) are not in the history path leading back from f2150f7. You cannot see the future commits.
+
+The --all flag tells Git to start the log traversal from all references (branches, tags, and other pointers, including the main branch pointer).
+
+Behavior in Detached HEAD: Git includes the entire history referenced by the main branch. It traces the history back from the tip of main (ebbd4b1) and the history back from HEAD (f2150f7) and combines them.
+
+Result: It shows all reachable history in the repository. You see the complete commit graph, which clearly labels where main is pointing (the newest commit) and where HEAD is pointing (the older commit).
 
 ```zsh
 ebbd4b1 (main) add details to lesson
