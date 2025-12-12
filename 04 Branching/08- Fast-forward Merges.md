@@ -20,7 +20,7 @@ In this log we can see that the branch ***`fast-forward-merge`*** is one commit 
 
 ## Merge branch fast-forward
 
-To merge the ***`fast-forward-merge`*** branch into ***`main`***, we first should have committed all of our work in that branch and them we switch to ***`main`***. In the ***`main`*** branch we run the merge with the command:
+To merge the ***`fast-forward-merge`*** branch into ***`main`***, we first should have committed all of our work in that branch and then we switch to ***`main`***. In the ***`main`*** branch we run the merge with the command:
 
 ```zsh
 git merge fast-forward-merge

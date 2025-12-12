@@ -54,7 +54,7 @@ b5f716e lesson complete
 
 If we switch back to **_main_** our **Working Directory** will be restored to that point.
 
-## Delete a brach `-d` or `-D`
+## Delete a branch `-d` or `-D`
 
 To delete, first we need to change to a different branch usually ***main***, then we use the `-d` option, but if this branch as unmerged changes with ***main***, Git will throw an error warning us.
 
