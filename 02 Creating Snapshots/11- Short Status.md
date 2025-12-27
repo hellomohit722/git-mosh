@@ -55,15 +55,16 @@ A  "02 Creating Snapshots/12- Viewing Staged and Unstaged Changes.md"
 
 
 ```
-Symbol,Meaning,Description
-??,Untracked,New file that has not been added to the repository yet.
-A ,Added,File is added to the staging area (index).
- M,Modified,File has been changed in the working directory but not staged.
-M ,Modified,File has been changed and the changes are staged.
-MM,Modified,"File is modified, staged, and then modified again (both columns)."
-D ,Deleted,File is deleted and the deletion is staged.
- D,Deleted,File is deleted in the working directory but not staged.
-R ,Renamed,File has been renamed in the staging area.
-C ,Copied,File has been copied in the staging area.
-U ,Updated but Unmerged,File has a merge conflict that needs to be resolved.
+Symbol	Meaning  				Description
+??		Untracked				New file that has not been added to the repository yet.
+A		Added					File is added to the staging area (index).
+M		Modified				File has been changed in the working directory but not staged.
+M		Modified				File has been changed and the changes are staged.
+MM		Modified				File is modified, staged, and then modified again (both columns).
+D		Deleted					File is deleted and the deletion is staged.
+D		Deleted					File is deleted in the working directory but not staged.
+R		Renamed					File has been renamed in the staging area.
+C		Copied					File has been copied in the staging area.
+U		Updated but Unmerged	File has a merge conflict that needs to be resolved.
 ```
+
