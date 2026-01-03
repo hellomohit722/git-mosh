@@ -89,4 +89,19 @@ b9e25df start new lesson
 [...]
 ```
 
-To attache the `HEAD` pointer to the branch, use `git checkout <name of the branch>` in this case `git checkout main`.
+To attach the `HEAD` pointer to the branch, use `git checkout <name of the branch>` in this case `git checkout main`.
+
+## How to Recover "Lost" Commits
+
+If you made changes while in a **Detached HEAD** state and then switched back to `main`, don't panic! Your work isn't deleted; it is just "orphaned" because no branch is pointing to it.
+
+### 1. Use the Reflog
+The **Reflog** is Git's internal diary of everywhere your `HEAD` has been. To see it, run:
+
+```bash
+git reflog
+```
+You will see a list of recent actions. Look for the line representing your experimental commit: abc1234 HEAD@{1}: commit: my experimental changes
+
+#Save the Commit
+Once you have found the commit ID (e.g., abc1234), you can attach a branch name to it so it is no longer lost:
