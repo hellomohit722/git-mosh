@@ -16,8 +16,11 @@ git commit -m "Initial commit"
 ```
 
 ## 2. Create the Repo on GitHub
+
 Go to github.com/new.
+
 Name your repository (do not initialize with a README/License if you have local code).
+
 Click Create repository.
 
 ## 3. Link Local to Remote
